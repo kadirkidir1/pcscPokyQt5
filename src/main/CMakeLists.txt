@@ -30,7 +30,7 @@ ADD_LIBRARY(
     ${CMAKE_CURRENT_SOURCE_DIR}/PcscSupportedContactProtocol.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/PcscSupportedContactlessProtocol.cpp
     ${CMAKE_CURRENT_SOURCE_DIR}/cpp/CardTerminal.cpp
-    /opt/poky/1.8.1/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/include/PCSC
+    /opt/poky-dtsis/3.0.4/sysroots/cortexa9t2hf-neon-poky-linux-gnueabi/include/PCSC
 )
 
 TARGET_INCLUDE_DIRECTORIES(
@@ -42,6 +42,8 @@ TARGET_INCLUDE_DIRECTORIES(
     ${CMAKE_CURRENT_SOURCE_DIR}
     cpp
     cpp/exception
+    
+    /opt/poky-dtsis/3.0.4/sysroots/cortexa9t2hf-neon-poky-linux-gnueabi/include/PCSC
 )
 
 IF(APPLE)                                                                                           
@@ -49,7 +51,7 @@ IF(APPLE)
 ELSEIF(UNIX)                                                                                            
             FIND_LIBRARY(PCSC
                     NAMES pcsclite
-                    HINTS "/opt/poky/1.8.1/sysroots/cortexa9hf-vfp-neon-poky-linux-gnueabi/usr/lib"
+                    HINTS "/opt/poky-dtsis/3.0.4/sysroots/cortexa9t2hf-neon-poky-linux-gnueabi/usr/lib"
                 )                                                               
 ELSEIF(WIN32)                                                                                           
         SET(CMAKE_FIND_LIBRARY_PREFIXES "")                                                         
